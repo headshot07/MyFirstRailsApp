@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class RidesControllerTest < ActionDispatch::IntegrationTest
+class RideRequestsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

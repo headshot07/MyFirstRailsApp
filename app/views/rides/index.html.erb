@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1 style="text-align: center; font-weight: bolder;font-family: sans-serif;">Today's Ride</h1>
+<table class="table">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Date</th>
+    <th scope="col">Time</th>
+    <th scope="col">Location</th>
+    <th scope="col">Cad ID</th>
+    <th scope="col">Driver ID</th>
+    <th vscope="col">Driver Name</th>
+    <th scope="col">Request Count</th>
+    <th scope="col">View Requests</th>
+  </tr>
+  <% @rides.each do |ele| %>
+    <tr>
+    <td scope="col"><%=ele.id %></td>
+    <td scope="col"><%=ele.date %></td>
+    <td scope="col"><%=ele.time.strftime("%I:%M%p") %></td>
+    <td scope="col"><%=ele.location %></td>
+    <td scope="col"><%=ele.cab_id %></td>
+    <td scope="col"><%=ele.driver_id %></td>
+    <td scope="col"><%=ele.driver_name %></td>
+    <td scope="col"><%=ele.ride_requests.count %></td>
+    <td>
+    <button type="button" class="btn"><%= link_to 'View Requests', ride_ride_requests_path(ele) %></button>
+    </td>
+  </tr>
+  <% end %>
+</table>
+</body>
+
+

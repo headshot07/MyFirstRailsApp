@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div >
+<h1 style="text-align: center;font-family: sans-serif;font-weight: bolder;">Rides Requests</h1>
+<table class="table">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">User Name</th>
+    <th scope="col">Status</th>
+  </tr>
+  <% @requests.each do |ele| %>
+    <tr>
+    <td><%=ele.id %></td>
+    <td><%=ele.user.first_name%></td>
+    <td><%=ele.status %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+</body>
